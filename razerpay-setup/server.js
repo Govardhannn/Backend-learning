@@ -1,3 +1,4 @@
+import "./src/env.js";  // ⭐ FIRST
 import app from "./src/app.js";
 const PORT = process.env.PORT || 8100;
 import connDB from "./src/config/db.js";
