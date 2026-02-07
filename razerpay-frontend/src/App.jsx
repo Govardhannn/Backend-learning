@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import PaymentButton from "./PaymentButton";
 
 export default function App() {
   const [product, setProduct] = useState(null);
@@ -13,9 +14,7 @@ export default function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleBuyNow = () => {
-    alert("Proceeding to payment 🚀");
-  };
+
 
 
   if (!product) {
@@ -47,13 +46,8 @@ export default function App() {
 
         <p className="text-sm text-gray-500">{product.category}</p>
 
+       <PaymentButton/>
        
-        <button
-          onClick={handleBuyNow}
-          className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition"
-        >
-          Buy Now
-        </button>
       </div>
     </div>
   );
